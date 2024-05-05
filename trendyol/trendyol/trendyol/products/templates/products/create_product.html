@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendyol</title>
+</head>
+<body bgcolor="wheat">
+    <h1>Elan yerlesdir</h1>
+    <form action="{% url 'products:create-product' %}" method="POST">
+        {% csrf_token %}
+        <label>Mehsulun adi:</label>
+        <input type="text" name="name"><br><br>
+        <label for="Qiymeti":></label>
+        <input type="number" step="any" name="price"><br><br>
+        <label>Istehsal olkesi:</label>
+        <input type="text" name="made_in"><br><br>
+        <button type="submit">Gönder getsin</button>
+    </form>
+</body>
+</html>

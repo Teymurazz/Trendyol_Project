@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose-Store</title>
+    <link rel="stylesheet" href="{% static 'flowers/style.css' %}">
+</head>
+<body>
+    {% for fl in flowers %}
+    <a href="flower/{{ fl.pk }}/">
+        <div class="product-card">
+            <img src="{{ fl.image_url }}" alt="Product 1">
+            <h3>{{ fl.name }}</h3>
+            <p>Stock amount {{ fl.stock_qty }}</p>
+            <span class="price">${{ fl.price }}</span>
+            <button>Add to Cart</button>
+        </div>
+    </a>
+    {% endfor %}
+</body>
+</html>

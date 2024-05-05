@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список продуктов</title>
+    <style>
+        /* Добавляем жёлтый фон для списка */
+        ul {
+            background-color: rgb(240, 240, 108);
+            padding: 10px; /* Добавляем отступ вокруг списка */
+        }
+
+        /* Добавляем отступ между элементами списка */
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список продуктов</h1>
+    <ul>
+        {% for product in products %}
+            <li><a href="{{ product.get_absolute_url }}">{{ product.name }} - Цена: {{ product.price }} - Сделано в {{ product.made_in }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
